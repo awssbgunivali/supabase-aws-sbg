@@ -10,6 +10,6 @@ jobs:
     name: Migrations + RLS
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       # Sobe um Postgres no Docker, aplica todas as migrations e roda supabase/tests/10_permissions.sql
       - run: bash scripts/test-db.sh
