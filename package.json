@@ -1,0 +1,21 @@
+{
+  "name": "supabase-aws-sbg",
+  "version": "1.0.0",
+  "description": "Banco, autenticação e funções do site AWS Student Builder Groups (multi-grupo, Supabase).",
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "scripts": {
+    "db:link": "supabase link --project-ref $SUPABASE_PROJECT_REF",
+    "db:push": "supabase db push",
+    "db:status": "supabase migration list",
+    "functions:deploy": "supabase functions deploy send-announcement && supabase functions deploy send-certificate && supabase functions deploy notify-publication",
+    "functions:deploy:mcp": "supabase functions deploy studio-mcp",
+    "check:functions": "for f in send-announcement send-certificate notify-publication studio-mcp; do npx -y deno check --node-modules-dir=none supabase/functions/$f/index.ts || exit 1; done",
+    "test:db": "bash scripts/test-db.sh"
+  },
+  "devDependencies": {
+    "supabase": "^2.120.0"
+  },
+  "private": true
+}

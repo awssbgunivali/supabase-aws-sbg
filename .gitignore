@@ -1,0 +1,11 @@
+node_modules
+.env
+.env.*
+!.env.example
+.branches
+.temp
+
+# Dados reais de um grupo (nomes, links, e-mails): só na sua máquina, nunca no repositório público
+*.local.sql
+# Esquema antigo da Univali (um grupo só), guardado só como referência local
+supabase/legacy-univali/
